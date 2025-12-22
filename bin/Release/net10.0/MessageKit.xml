@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessageKit</name>
+    </assembly>
+    <members>
+        <member name="T:MessageKit.Data.Core.MessageTemplate">
+            <summary>
+            Represents a message template with a translation key and required placeholders.
+            </summary>
+            <param name="translationKey"></param>
+            <param name="requiredPlaceholders"></param>
+        </member>
+        <member name="M:MessageKit.Data.Core.MessageTemplate.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Represents a message template with a translation key and required placeholders.
+            </summary>
+            <param name="translationKey"></param>
+            <param name="requiredPlaceholders"></param>
+        </member>
+        <member name="P:MessageKit.Data.Core.MessageTemplate.TranslationKey">
+            <summary>
+            The translation key for the message template.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.MessageTemplate.RequiredPlaceholders">
+            <summary>
+            List of placeholders that must be provided when using this template.
+            </summary>
+        </member>
+        <member name="T:MessageKit.Enums.MessageInformationTypeEnum">
+            <summary>
+            Enum representing different types of message information.
+            </summary>
+        </member>
+        <member name="F:MessageKit.Enums.MessageInformationTypeEnum.Info">
+            <summary>
+            Informational message type.
+            </summary>
+        </member>
+        <member name="F:MessageKit.Enums.MessageInformationTypeEnum.Warning">
+            <summary>
+            Warning message type.
+            </summary>
+        </member>
+        <member name="F:MessageKit.Enums.MessageInformationTypeEnum.Error">
+            <summary>
+            Error message type.
+            </summary>
+        </member>
+        <member name="T:MessageKit.MessageOptions">
+            <summary>
+            Configuration options for message handling and translation.
+            </summary>
+        </member>
+        <member name="P:MessageKit.MessageOptions.BaseTranslationKey">
+            <summary>
+            Base translation key used when no explicit key is provided.
+            Example: "messages.base"
+            </summary>
+        </member>
+        <member name="P:MessageKit.MessageOptions.TranslationKeyPrefix">
+            <summary>
+            Optional prefix automatically applied to all message translation keys.
+            Example: "app.notifications"
+            </summary>
+        </member>
+        <member name="T:MessageKit.MessageServiceCollectionExtensions">
+            <summary>
+            Extension methods for registering message services in the IServiceCollection.
+            </summary>
+        </member>
+        <member name="M:MessageKit.MessageServiceCollectionExtensions.AddMessages(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{MessageKit.MessageOptions})">
+            <summary>
+            Registers message services and configuration in the IServiceCollection.
+            </summary>
+            <param name="services"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MessageKit.Utility.Attributes.MessageInformationTypeConnotationAttribute">
+            <summary>
+            Attribute to indicate the connotation of a message information type.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Utility.Attributes.MessageInformationTypeConnotationAttribute.IsNegative">
+            <summary>
+            Indicates whether the message type has a negative connotation.
+            </summary>
+        </member>
+        <member name="T:MessageKit.Utility.Builders.MessageBuilder">
+            <summary>
+            Builder class for constructing messages based on a message template.
+            </summary>
+            <param name="template"></param>
+        </member>
+        <member name="M:MessageKit.Utility.Builders.MessageBuilder.#ctor(MessageKit.Data.Core.MessageTemplate)">
+            <summary>
+            Builder class for constructing messages based on a message template.
+            </summary>
+            <param name="template"></param>
+        </member>
+        <member name="P:MessageKit.Utility.Builders.MessageBuilder.Template">
+            <summary>
+            The message template associated with this builder.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Utility.Builders.MessageBuilder.MessagePlaceholders">
+            <summary>
+            Dictionary of placeholders and their corresponding values for the message.
+            </summary>
+        </member>
+        <member name="M:MessageKit.Utility.Builders.MessageBuilder.With(System.String,System.String)">
+            <summary>
+            Adds a placeholder and its value to the message.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:MessageKit.Utility.Builders.MessageBuilder.From(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Adds multiple placeholders and their values to the message.
+            </summary>
+            <param name="placeholders"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageKit.Utility.Builders.MessageBuilder.Validate">
+            <summary>
+            Validates that all required placeholders are present in the message.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:MessageKit.Utility.Extensions.MessageInformationTypeExtensions">
+            <summary>
+            Extension methods for MessageInformationTypeEnum.
+            </summary>
+        </member>
+        <member name="M:MessageKit.Utility.Extensions.MessageInformationTypeExtensions.IsNegative(MessageKit.Enums.MessageInformationTypeEnum)">
+            <summary>
+            Determines if the message information type has a negative connotation.
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
