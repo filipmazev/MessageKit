@@ -5,7 +5,7 @@
 
     <!-- NuGet metadata -->
     <PackageId>MessageKit</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.2</Version>
     <Authors>Filip Mazev</Authors>
     <Company>MessageKit</Company>
 

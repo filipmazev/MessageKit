@@ -4,6 +4,90 @@
         <name>MessageKit</name>
     </assembly>
     <members>
+        <member name="T:MessageKit.Configuration.Interfaces.IMessageConfiguration">
+            <summary>
+            Interface for message configuration settings.
+            </summary>
+        </member>
+        <member name="M:MessageKit.Configuration.Interfaces.IMessageConfiguration.ResolveTranslationKey(System.String)">
+            <summary>
+            Resolves the full translation key based on the provided message key and configuration settings.
+            </summary>
+            <param name="messageKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MessageKit.Data.Core.Message">
+            <summary>
+            Represents a message with translation key, placeholders, sender, timestamps, and information type.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.TranslationKey">
+            <summary>
+            The base translation key for the message.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.InformationType">
+            <summary>
+            The information type of the message (e.g., Info, Warning, Error).
+            </summary>
+        </member>
+        <member name="F:MessageKit.Data.Core.Message.CorePlaceholders">
+            <summary>
+            Core placeholders that are always included in the message.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.MessagePlaceholders">
+            <summary>
+            Placeholders specific to this message instance.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.MessageTranslationKey">
+            <summary>
+            The translation key for this specific message instance.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.Sender">
+            <summary>
+            The sender of the message.
+            </summary>
+            
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.SentAt">
+            <summary>
+            The timestamp when the message was sent.
+            </summary>
+        </member>
+        <member name="P:MessageKit.Data.Core.Message.ReadAt">
+            <summary>
+            The timestamp when the message was read, if applicable.
+            </summary>
+        </member>
+        <member name="M:MessageKit.Data.Core.Message.#ctor(MessageKit.Utility.Builders.MessageBuilder,MessageKit.Configuration.Interfaces.IMessageConfiguration,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Constructs a new Message instance.
+            </summary>
+            <param name="messageBuilder"></param>
+            <param name="messageConfig"></param>
+            <param name="sender"></param>
+            <param name="level"></param>
+            <param name="sentAt"></param>
+            <param name="readAt"></param>
+        </member>
+        <member name="M:MessageKit.Data.Core.Message.GetHashCode">
+            <summary>
+            Computes the hash code for the message instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageKit.Data.Core.Message.GetDictionaryHashCode``2(System.Collections.Generic.IDictionary{``0,``1})">
+            <summary>
+            Computes a hash code for a dictionary by combining the hash codes of its key-value pairs.
+            </summary>
+            <param name="dict"></param>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
         <member name="T:MessageKit.Data.Core.MessageTemplate">
             <summary>
             Represents a message template with a translation key and required placeholders.
@@ -47,6 +131,44 @@
             <summary>
             Error message type.
             </summary>
+        </member>
+        <member name="T:MessageKit.IMessageFactory">
+            <summary>
+            Factory interface for creating message instances.
+            </summary>
+        </member>
+        <member name="M:MessageKit.IMessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Creates a new Message instance using the provided parameters.
+            </summary>
+            <param name="builder"></param>
+            <param name="sender"></param>
+            <param name="level"></param>
+            <param name="sentAt"></param>
+            <param name="readAt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MessageKit.MessageFactory">
+            <summary>
+            Factory class for creating Message instances.
+            </summary>
+        </member>
+        <member name="M:MessageKit.MessageFactory.#ctor(MessageKit.Configuration.Interfaces.IMessageConfiguration)">
+            <summary>
+            Constructs a new MessageFactory with the specified message configuration.
+            </summary>
+            <param name="messageConfig"></param>
+        </member>
+        <member name="M:MessageKit.MessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Creates a new Message instance using the provided parameters.
+            </summary>
+            <param name="builder"></param>
+            <param name="sender"></param>
+            <param name="level"></param>
+            <param name="sentAt"></param>
+            <param name="readAt"></param>
+            <returns></returns>
         </member>
         <member name="T:MessageKit.MessageOptions">
             <summary>

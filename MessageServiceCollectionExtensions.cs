@@ -22,6 +22,7 @@ public static class MessageServiceCollectionExtensions
         services.Configure(configure);
 
         services.AddSingleton<IMessageConfiguration, MessageConfiguration>();
+        services.AddSingleton<IMessageFactory, MessageFactory>();
 
         return services;
     }
