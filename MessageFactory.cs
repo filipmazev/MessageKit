@@ -29,14 +29,16 @@ public class MessageFactory : IMessageFactory
     /// <param name="level"></param>
     /// <param name="sentAt"></param>
     /// <param name="readAt"></param>
+    /// <param name="translationKey"></param>
     /// <returns></returns>
     public Message CreateMessage(
         MessageBuilder builder,
         string sender,         
         MessageInformationTypeEnum level = MessageInformationTypeEnum.Info,
         DateTime sentAt = default,
-        DateTime? readAt = null)
+        DateTime? readAt = null,
+        string? translationKey = null)
     {
-        return new Message(builder, _messageConfig, sender, level, sentAt, readAt);
+        return new Message(builder, _messageConfig, sender, level, sentAt, readAt, translationKey);
     }
 }

@@ -57,17 +57,19 @@ public class Message
     /// <param name="level"></param>
     /// <param name="sentAt"></param>
     /// <param name="readAt"></param>
+    /// <param name="translationKey"></param>
     public Message(
         MessageBuilder messageBuilder,
         IMessageConfiguration messageConfig,
         string sender = "System",
         MessageInformationTypeEnum level = MessageInformationTypeEnum.Info,
         DateTime sentAt = default,
-        DateTime? readAt = null)
+        DateTime? readAt = null,
+        string? translationKey = null)
     {
         messageBuilder.Validate();
         
-        TranslationKey = messageConfig.ResolveTranslationKey(null);
+        TranslationKey = translationKey ?? messageConfig.ResolveTranslationKey(null);
         MessageTranslationKey = messageBuilder.Template.TranslationKey;
         MessagePlaceholders = messageBuilder.MessagePlaceholders;
         

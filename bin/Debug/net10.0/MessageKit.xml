@@ -138,7 +138,7 @@
             Factory interface for creating message instances.
             </summary>
         </member>
-        <member name="M:MessageKit.IMessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime},System.String)">
+        <member name="M:MessageKit.IMessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
             <summary>
             Creates a new Message instance using the provided parameters.
             </summary>
@@ -147,7 +147,6 @@
             <param name="level"></param>
             <param name="sentAt"></param>
             <param name="readAt"></param>
-            <param name="translationKey"></param>
             <returns></returns>
         </member>
         <member name="T:MessageKit.MessageFactory">
@@ -161,7 +160,7 @@
             </summary>
             <param name="messageConfig"></param>
         </member>
-        <member name="M:MessageKit.MessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime},System.String)">
+        <member name="M:MessageKit.MessageFactory.CreateMessage(MessageKit.Utility.Builders.MessageBuilder,System.String,MessageKit.Enums.MessageInformationTypeEnum,System.DateTime,System.Nullable{System.DateTime})">
             <summary>
             Creates a new Message instance using the provided parameters.
             </summary>
@@ -170,7 +169,6 @@
             <param name="level"></param>
             <param name="sentAt"></param>
             <param name="readAt"></param>
-            <param name="translationKey"></param>
             <returns></returns>
         </member>
         <member name="T:MessageKit.MessageOptions">
